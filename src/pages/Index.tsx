@@ -67,6 +67,99 @@ const Index = () => {
     }
   ];
 
+  const varieties = [
+    {
+      id: 1,
+      name: 'Блюкроп',
+      type: 'Северная высокорослая',
+      origin: 'США',
+      maturity: 'Средний',
+      berrySize: 'Крупная (17-20 мм)',
+      yield: '4-6 кг с куста',
+      winterHardiness: '-30°C',
+      features: ['Высокая урожайность', 'Хорошая транспортабельность', 'Устойчив к болезням'],
+      taste: 'Кисло-сладкий, приятный',
+      harvest: 'Конец июля - август',
+      image: '/img/6b958231-dcb9-4b4d-a285-460d21d41b1d.jpg',
+      description: 'Один из самых популярных коммерческих сортов. Куст сильнорослый, прямостоячий, высотой до 1,8 м.'
+    },
+    {
+      id: 2,
+      name: 'Патриот',
+      type: 'Северная высокорослая',
+      origin: 'США',
+      maturity: 'Ранний',
+      berrySize: 'Очень крупная (19-21 мм)',
+      yield: '5-7 кг с куста',
+      winterHardiness: '-35°C',
+      features: ['Очень морозостойкий', 'Крупные ягоды', 'Устойчив к фитофторозу'],
+      taste: 'Сладкий с легкой кислинкой',
+      harvest: 'Середина июля',
+      image: '/img/d188ad5d-9631-4fe5-86e0-f567b51fa67b.jpg',
+      description: 'Отличный выбор для северных регионов. Ягоды темно-синие, плотные, хорошо хранятся.'
+    },
+    {
+      id: 3,
+      name: 'Дюк',
+      type: 'Северная высокорослая',
+      origin: 'США',
+      maturity: 'Ранний',
+      berrySize: 'Крупная (16-18 мм)',
+      yield: '4-5 кг с куста',
+      winterHardiness: '-32°C',
+      features: ['Раннее созревание', 'Устойчив к монилиозу', 'Компактный куст'],
+      taste: 'Сладкий, ароматный',
+      harvest: 'Начало июля',
+      image: '/img/1134a526-7d35-4601-bfc2-e33008f51107.jpg',
+      description: 'Раннеспелый сорт с отличными вкусовыми качествами. Куст средней высоты, до 1,5 м.'
+    },
+    {
+      id: 4,
+      name: 'Элизабет',
+      type: 'Северная высокорослая', 
+      origin: 'США',
+      maturity: 'Поздний',
+      berrySize: 'Очень крупная (20-22 мм)',
+      yield: '4-6 кг с куста',
+      winterHardiness: '-28°C',
+      features: ['Превосходный вкус', 'Очень крупные ягоды', 'Длительное созревание'],
+      taste: 'Очень сладкий, десертный',
+      harvest: 'Август - сентябрь',
+      image: '/img/6b958231-dcb9-4b4d-a285-460d21d41b1d.jpg',
+      description: 'Один из самых вкусных сортов. Ягоды светло-голубые, с превосходным ароматом.'
+    },
+    {
+      id: 5,
+      name: 'Дениз Блю',
+      type: 'Южная высокорослая',
+      origin: 'Австралия',
+      maturity: 'Средний-поздний',
+      berrySize: 'Крупная (17-19 мм)',
+      yield: '6-8 кг с куста',
+      winterHardiness: '-20°C',
+      features: ['Высокая урожайность', 'Жаростойкий', 'Длительное плодоношение'],
+      taste: 'Сладкий с приятной кислинкой',
+      harvest: 'Июль - август',
+      image: '/img/d188ad5d-9631-4fe5-86e0-f567b51fa67b.jpg',
+      description: 'Современный сорт для теплых регионов. Отличается стабильно высокой урожайностью.'
+    },
+    {
+      id: 6,
+      name: 'Нортланд',
+      type: 'Полувысокорослая',
+      origin: 'США',
+      maturity: 'Ранний-средний',
+      berrySize: 'Средняя (14-16 мм)',
+      yield: '3-4 кг с куста',
+      winterHardiness: '-40°C',
+      features: ['Сверхвысокая зимостойкость', 'Компактный куст', 'Устойчив к засухе'],
+      taste: 'Кисло-сладкий, освежающий',
+      harvest: 'Конец июля',
+      image: '/img/1134a526-7d35-4601-bfc2-e33008f51107.jpg',
+      description: 'Идеален для суровых климатических условий. Куст низкорослый, высотой до 1,2 м.'
+    }
+  ];
+
   const blogPosts = [
     {
       id: 1,
@@ -285,6 +378,7 @@ const Index = () => {
             <nav className="hidden md:flex space-x-8">
               <a href="#diagnosis" className="text-gray-600 hover:text-primary font-medium">Диагностика</a>
               <a href="#database" className="text-gray-600 hover:text-primary font-medium">База болезней</a>
+              <a href="#varieties" className="text-gray-600 hover:text-primary font-medium">Сорта</a>
               <a href="#blog" className="text-gray-600 hover:text-primary font-medium">Блог</a>
               <a href="#schedule" className="text-gray-600 hover:text-primary font-medium">График обработок</a>
             </nav>
@@ -342,9 +436,10 @@ const Index = () => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Tabs defaultValue="diagnosis" className="space-y-8">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-5">
             <TabsTrigger value="diagnosis">Диагностика</TabsTrigger>
             <TabsTrigger value="database">База болезней</TabsTrigger>
+            <TabsTrigger value="varieties">Сорта</TabsTrigger>
             <TabsTrigger value="blog">Блог</TabsTrigger>
             <TabsTrigger value="schedule">График обработок</TabsTrigger>
           </TabsList>
@@ -520,6 +615,234 @@ const Index = () => {
                     </CardContent>
                   </Card>
                 ))}
+              </div>
+            </div>
+          </TabsContent>
+
+          {/* Varieties Tab */}
+          <TabsContent value="varieties" id="varieties">
+            <div className="space-y-8">
+              <div className="text-center">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Каталог сортов голубики</h2>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  Подробные характеристики лучших сортов голубики для разных климатических условий
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-2 justify-center">
+                <Badge variant="secondary">Все сорта (147)</Badge>
+                <Badge variant="outline">Северная высокорослая (89)</Badge>
+                <Badge variant="outline">Южная высокорослая (34)</Badge>
+                <Badge variant="outline">Полувысокорослая (24)</Badge>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-8">
+                {varieties.map((variety) => (
+                  <Card key={variety.id} className="hover:shadow-lg transition-shadow">
+                    <div className="grid md:grid-cols-5 gap-6">
+                      <div className="md:col-span-2">
+                        <img 
+                          src={variety.image} 
+                          alt={variety.name}
+                          className="w-full h-48 object-cover rounded-lg"
+                        />
+                      </div>
+                      <div className="md:col-span-3 space-y-4">
+                        <CardHeader className="p-0">
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <CardTitle className="text-xl">{variety.name}</CardTitle>
+                              <CardDescription className="text-base">
+                                {variety.type} • {variety.origin}
+                              </CardDescription>
+                            </div>
+                            <Badge className={
+                              variety.maturity === 'Ранний' ? 'bg-green-500' :
+                              variety.maturity === 'Средний' ? 'bg-blue-500' :
+                              variety.maturity === 'Поздний' ? 'bg-purple-500' : 'bg-orange-500'
+                            }>
+                              {variety.maturity}
+                            </Badge>
+                          </div>
+                        </CardHeader>
+                        
+                        <CardContent className="p-0 space-y-4">
+                          <p className="text-sm text-gray-600">{variety.description}</p>
+                          
+                          <div className="grid grid-cols-2 gap-4 text-sm">
+                            <div>
+                              <span className="font-medium">Размер ягоды:</span>
+                              <p className="text-gray-600">{variety.berrySize}</p>
+                            </div>
+                            <div>
+                              <span className="font-medium">Урожайность:</span>
+                              <p className="text-gray-600">{variety.yield}</p>
+                            </div>
+                            <div>
+                              <span className="font-medium">Морозостойкость:</span>
+                              <p className="text-gray-600">{variety.winterHardiness}</p>
+                            </div>
+                            <div>
+                              <span className="font-medium">Созревание:</span>
+                              <p className="text-gray-600">{variety.harvest}</p>
+                            </div>
+                          </div>
+
+                          <div>
+                            <span className="font-medium text-sm">Вкус:</span>
+                            <p className="text-sm text-gray-600 mt-1">{variety.taste}</p>
+                          </div>
+
+                          <div>
+                            <span className="font-medium text-sm mb-2 block">Особенности:</span>
+                            <div className="flex flex-wrap gap-1">
+                              {variety.features.map((feature, index) => (
+                                <Badge key={index} variant="outline" className="text-xs">
+                                  {feature}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div className="flex gap-2 pt-2">
+                            <Button variant="outline" size="sm" className="flex-1">
+                              <Icon name="Star" size={14} className="mr-1" />
+                              В избранное
+                            </Button>
+                            <Button variant="outline" size="sm" className="flex-1">
+                              <Icon name="Download" size={14} className="mr-1" />
+                              Карточка сорта
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Comparison Section */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-2">
+                    <Icon name="GitCompare" size={24} className="text-primary" />
+                    <span>Сравнение сортов</span>
+                  </CardTitle>
+                  <CardDescription>
+                    Выберите сорта для детального сравнения характеристик
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-b">
+                          <th className="text-left py-3 px-2">Сорт</th>
+                          <th className="text-center py-3 px-2">Созревание</th>
+                          <th className="text-center py-3 px-2">Размер ягоды</th>
+                          <th className="text-center py-3 px-2">Урожайность</th>
+                          <th className="text-center py-3 px-2">Морозостойкость</th>
+                          <th className="text-center py-3 px-2">Оценка вкуса</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {varieties.slice(0, 4).map((variety) => (
+                          <tr key={variety.id} className="border-b hover:bg-gray-50">
+                            <td className="py-3 px-2 font-medium">{variety.name}</td>
+                            <td className="py-3 px-2 text-center">
+                              <Badge size="sm" variant="outline">{variety.maturity}</Badge>
+                            </td>
+                            <td className="py-3 px-2 text-center text-gray-600">{variety.berrySize}</td>
+                            <td className="py-3 px-2 text-center text-gray-600">{variety.yield}</td>
+                            <td className="py-3 px-2 text-center text-gray-600">{variety.winterHardiness}</td>
+                            <td className="py-3 px-2 text-center">
+                              <div className="flex justify-center">
+                                {[1,2,3,4,5].map((star) => (
+                                  <Icon key={star} name="Star" size={14} className="text-yellow-400 fill-current" />
+                                ))}
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="mt-4 text-center">
+                    <Button variant="outline">
+                      <Icon name="Plus" size={16} className="mr-2" />
+                      Показать все сорта
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Selection Guide */}
+              <div className="grid md:grid-cols-3 gap-6">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center space-x-2">
+                      <Icon name="Snowflake" size={20} className="text-blue-500" />
+                      <span>Для холодных регионов</span>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="text-sm">
+                      <p className="font-medium">Рекомендуются:</p>
+                      <ul className="mt-2 space-y-1 text-gray-600">
+                        <li>• Патриот (-35°C)</li>
+                        <li>• Нортланд (-40°C)</li>
+                        <li>• Блюкроп (-30°C)</li>
+                      </ul>
+                    </div>
+                    <Button variant="outline" size="sm" className="w-full">
+                      Подробнее
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center space-x-2">
+                      <Icon name="Sun" size={20} className="text-orange-500" />
+                      <span>Для теплых регионов</span>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="text-sm">
+                      <p className="font-medium">Рекомендуются:</p>
+                      <ul className="mt-2 space-y-1 text-gray-600">
+                        <li>• Дениз Блю (-20°C)</li>
+                        <li>• Элизабет (-28°C)</li>
+                        <li>• Южные сорта</li>
+                      </ul>
+                    </div>
+                    <Button variant="outline" size="sm" className="w-full">
+                      Подробнее
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center space-x-2">
+                      <Icon name="TrendingUp" size={20} className="text-green-500" />
+                      <span>Для коммерции</span>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="text-sm">
+                      <p className="font-medium">Высокоурожайные:</p>
+                      <ul className="mt-2 space-y-1 text-gray-600">
+                        <li>• Блюкроп (6 кг)</li>
+                        <li>• Дениз Блю (8 кг)</li>
+                        <li>• Патриот (7 кг)</li>
+                      </ul>
+                    </div>
+                    <Button variant="outline" size="sm" className="w-full">
+                      Подробнее
+                    </Button>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </TabsContent>
