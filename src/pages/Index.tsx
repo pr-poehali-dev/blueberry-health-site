@@ -574,10 +574,7 @@ const Index = () => {
               <h2 className="text-5xl font-bold mb-6">
                 Диагностика болезней голубики
               </h2>
-              <p className="text-xl mb-8 text-blue-100">
-                ИИ-система для определения заболеваний по фотографии. 
-                Получите точный диагноз и план лечения за минуты.
-              </p>
+              <p className="text-xl mb-8 text-blue-100">Диагностика болезней через ИИ, калькуляторы, карта питомников и полный цикл агротехники — всё в одном месте</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
                   <Icon name="Camera" size={20} className="mr-2" />
