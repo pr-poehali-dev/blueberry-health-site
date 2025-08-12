@@ -632,9 +632,8 @@ const Index = () => {
                     <Icon name="Upload" size={24} className="text-primary" />
                     <span>Загрузка фотографии</span>
                   </CardTitle>
-                  <CardDescription>
-                    Сфотографируйте пораженные листья или ягоды для анализа
-                  </CardDescription>
+                  <CardDescription>1. Сфотографируйте пораженные листья, побеги или ягоды для анализа.
+Делайте детальные снимки в хорошем разрешении</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
